@@ -59,6 +59,17 @@ if message == "Send" or message == "send" then
     else
         io.write("Error: unexpected error occured.")
     end
+
+if message == "Broadcast" or message == "broadcast" then
+    io.write("Please, specify the port you want to send the message to: ")
+    local portReceiver = tonumber(io.read())
+    io.write("Please, write the message to send: ")
+    local messageToSend = io.read()
+    if net.broadcast(portReceiver, messageToSend) then
+        io.write("Message sent!")
+    else
+        io.write("Error: unexpected error occured.")
+    end
 end
 
 
