@@ -44,7 +44,7 @@ end
 
 --- This section is for sending messages from PC to PC
 
-io.write("Please, select if you want to send a message to all PC or to a specific one.\n Type 'Send' for one or multiple PC's, 'Broadcast' to all PC's.")
+io.write("Please, select if you want to send a message to all PC or to a specific one.\nType 'Send' for one or multiple PC's, 'Broadcast' to all PC's.\n")
 local message = io.read()
 
 if message == "Send" or message == "send" then
