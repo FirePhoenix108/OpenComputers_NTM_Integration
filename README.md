@@ -17,3 +17,5 @@ If you like this project, please consider supporting it by, maybe just writing a
 I know it's a useless thing too, but for me it's very important to know what you think. And maybe this is not even a real description or README for my repo.
 
 Nevermind, enjoy!
+
+Edit: To use these scripts, you MUST have Minecraft, NTM, OC and all the other stuff in MC version 1.7.10. I just discovered that with the 1.12.2 version, OC and NTM can't communicate with most of the blocks. Full compatibility is in 1.7.10.
