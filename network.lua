@@ -59,6 +59,7 @@ if message == "Send" or message == "send" then
     else
         io.write("Error: unexpected error occured.")
     end
+end
 
 if message == "Broadcast" or message == "broadcast" then
     io.write("Please, specify the port you want to send the message to: ")
