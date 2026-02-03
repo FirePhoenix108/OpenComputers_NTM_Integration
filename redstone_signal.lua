@@ -1,3 +1,6 @@
+--- I know it's the same thing as before, but i want to do
+--- separate things. If you like it, good. If not, make your own!
+
 local component = require("component")
 local sides = require("sides")
 
