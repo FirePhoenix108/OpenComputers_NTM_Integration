@@ -8,7 +8,7 @@ local serial = require("serialization")
 local net = component.modem
 
 local port
-local  message
+local message
 local address
 local portReceiver
 local messageToSend

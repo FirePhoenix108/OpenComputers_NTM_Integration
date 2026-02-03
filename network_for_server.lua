@@ -5,6 +5,7 @@
 
 
 local component = require("component")
+local event = require("event")
 
 local serverNet = component.modem
 local serverPort
@@ -22,5 +23,14 @@ while true do
         serverNet.open(serverPort)
         io.write("Port succesfully opened on " .. serverPort .. "!\n")
         break
+    end
+end
+
+while true do
+    local _, _, from, port, _, message = event.pull("modem_message")
+
+    if port == serverPort then
+        io.write("Messaggio ricevuto da " .. from .. ": " .. tostring(message)"\n")
+        serverNet.send(from, serverPort, "Received.")
     end
 end
