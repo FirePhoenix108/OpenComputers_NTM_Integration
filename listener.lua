@@ -6,9 +6,9 @@ local component = require("component")
 local event = require("event")
 
 local net = component.modem
-local input = io.read()
 
 io.write("Please, type the port you want to listen and receive messages: ")
+local input = io.read()
 local port = tonumber(input)
 
 if port then
