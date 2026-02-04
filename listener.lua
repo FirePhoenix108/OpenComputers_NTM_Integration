@@ -13,7 +13,7 @@ local port = tonumber(input)
 
 if port then
     net.open(port)
-    io.write("Port opened on" .. port .. "."\n)
+    io.write("Port opened on" .. port .. ".\n")
 else
     io.write("Error: incorrect port or port already open.")
     return
