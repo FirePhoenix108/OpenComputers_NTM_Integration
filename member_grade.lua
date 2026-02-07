@@ -7,6 +7,8 @@ io.write("This is the user database. Please be careful to what you are doing her
 
 local usersInfo = "/home/database/users.txt"
 
+
+--- This function let you put in the .txt file the info
 local function databaseSave(usersInfo, dataTable)
     local f = io.open(usersInfo, "w")
     if f then
@@ -18,24 +20,42 @@ local function databaseSave(usersInfo, dataTable)
     return false
 end
 
+--- Reading function, to see the database content
+local function databaseRead(usersInfo)
+    local r = io.open(usersInfo, "r")
+    if not r then
+        return {}
+    end
+    local content = f:read("*a")
+    f:close()
+    local savedInfo = sz.unserialize(content)
+    return savedInfo or {}
+end
+
 io.write("Do you want to make a new user or see the already registered ones?\n(Write '1' for new user or '2' to watch the database)...\n")
 local input = io.read()
 
 if input == 1 then
     if 
     io.write("Please write the username: ")
+    local username = io.read()
+    io.write("Please write the password: ")
+    local pssw = io.read()
+    local newUser = { password = pssw }
+    local database = loadDatabase(usersInfo)
+    database[username] = newUser
+    databaseSave(usersInfo, database)
+    io.write("User succesfully created!")
+    return
 end
 
+if input == 2 then 
+    io.write("---- REGISTERED USERS LIST ----")
+    local database = databaseRead(usersInfo)
+    for username, info in pairs(database) do
+        io.write("User: " .. username .. " | Password: " .. info.password)
+    end
 
-local users = {
-    powerPlantDirector = {
-        password = "1234",
-        grade = 10
-    },
-    worker = {
-        password = "1245",
-        grade = 3
-    }
-}
+    io.write("---------------------------")
+end
 
-return users
