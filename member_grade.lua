@@ -51,7 +51,7 @@ while input ~= "q" do
     io.write("\n1: New User | 2: View Database | q: Exit\n")
     io.write("Choice: ")
     input = io.read()
-    
+
     if input == "1" then
         io.write("Please write the username: ")
         local username = io.read()
@@ -74,4 +74,8 @@ while input ~= "q" do
         io.write("---------------------------\n")
     end
 end
+
+io.write("\n")
+os.execute("main.lua")
+
 
