@@ -35,7 +35,7 @@ end
 io.write("Do you want to make a new user or see the already registered ones?\n(Write '1' for new user or '2' to watch the database)...\n")
 local input = io.read()
 
-if input == 1 then
+if input == "1" then
     io.write("Please write the username: ")
     local username = io.read()
     io.write("Please write the password: ")
@@ -44,17 +44,17 @@ if input == 1 then
     local database = databaseRead(usersInfo)
     database[username] = newUser
     databaseSave(usersInfo, database)
-    io.write("User succesfully created!")
+    io.write("User succesfully created!\n")
     return
 end
 
-if input == 2 then 
-    io.write("---- REGISTERED USERS LIST ----")
+if input == "2" then 
+    io.write("---- REGISTERED USERS LIST ----\n")
     local database = databaseRead(usersInfo)
     for username, info in pairs(database) do
         io.write("User: " .. username .. " | Password: " .. info.password)
     end
 
-    io.write("---------------------------")
+    io.write("---------------------------\n")
 end
 
