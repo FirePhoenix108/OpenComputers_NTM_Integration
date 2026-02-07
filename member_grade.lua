@@ -7,6 +7,15 @@ io.write("This is the user database. Please be careful to what you are doing her
 
 local usersInfo = "/home/database/users.txt"
 
+if not fs.exists(usersInfo) then
+    io.write("WARNIGN!\nThe directory is missing.")
+    io.write("Creating it for you...\n")
+    fs.makeDirectory("/home/database")
+    io.write("A directory in /home named database has been created!\n")
+    io.write("Please, run again the program to make changes effective.\n")
+    return
+end
+
 
 --- This function let you put in the .txt file the info
 local function databaseSave(usersInfo, dataTable)
