@@ -26,8 +26,8 @@ local function databaseRead(usersInfo)
     if not r then
         return {}
     end
-    local content = f:read("*a")
-    f:close()
+    local content = r:read("*a")
+    r:close()
     local savedInfo = sz.unserialize(content)
     return savedInfo or {}
 end
@@ -41,7 +41,7 @@ if input == 1 then
     io.write("Please write the password: ")
     local pssw = io.read()
     local newUser = { password = pssw }
-    local database = loadDatabase(usersInfo)
+    local database = databaseRead(usersInfo)
     database[username] = newUser
     databaseSave(usersInfo, database)
     io.write("User succesfully created!")
