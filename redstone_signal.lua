@@ -17,20 +17,20 @@ local possibleSides = {
 local choosenSide = possibleSides[sideChoosen]
 
 while true do
-    print("Please, choose a value between 1 and 15, or if you want to exit, type 'q'.")
+    print("Please, choose a value between 0 and 15, or if you want to exit, type 'q'.")
     local inputSignal = io.read()
 
     if inputSignal == "q" then
         print("Closing programm...")
-        break
+        return
     end
 
-    if inputSignal < 1 or inputSignal > MAX_SIGNAL then
+    if inputSignal < 0 or inputSignal > MAX_SIGNAL then
         print("Error: please, type a value between 1 and 15.")
         local inputSignal = io.read()
     end
 
-    if inputSignal >= 1 and inputSignal <= MAX_SIGNAL then
+    if inputSignal >= 0 and inputSignal <= MAX_SIGNAL then
         local finalSignal = inputSignal
     end
 

@@ -9,7 +9,8 @@ local fs = require("filesystem")
 
 local rs = component.redstone
 local rbmkFuel = component.rbmk_fuel_rod
-local path = "/home/important_files/member_grade.lua"
+local luaPath = "/home/important_files/member_grade.lua"
+local dirPath = "/home/important_files"
 
 if not component.isAvailable("redstone") then
     io.write("Error: Redstone Card not found.")
@@ -25,9 +26,19 @@ local MAX_SIGNAL = 15
 local REQUIRED_GRADE = 7
 local alarm = false
 
-if not fs.exists(path) then
-    io.write("User database not found. Please, create a folder exactly like this: " .. path)
+---- Check to see if the user info dir exists
+if not fs.exists(dirPath) then
+    io.write("User directory database not found. ")
+    io.write("Creating it for you...\n")
+    fs.makeDirectory(dirPath)
+    io.write("A directory in /home named important_files has been created!\n")
+    io.write("Please, run again the program to make changes effective.\n")
     return
+end
+
+---- Check to see if the .lua file of the user info exists
+if not fs.exists(luaPath) then
+    io.write("")
 end
 
 local function loadUsers()

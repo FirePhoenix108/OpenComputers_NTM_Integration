@@ -3,6 +3,7 @@
 --- There are modified versions of those scripts.
 
 local component = require("component")
+local fs = require("filesystem")
 
 local menu = [[
 \n----MENU'----\n
@@ -11,7 +12,7 @@ local menu = [[
 3. Broadcaster.
 4. Messanger.
 5. Port Scanner.
-6. Database.
+6. User database.
 ]]
 
 io.write(menu)
@@ -19,6 +20,6 @@ io.write(menu)
 local input = io.read()
 local choice = tonumber(input)
 
-if choice == 1 then
-    io.open()
+if choice == 6 then
+    
 end
