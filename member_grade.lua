@@ -36,7 +36,6 @@ io.write("Do you want to make a new user or see the already registered ones?\n(W
 local input = io.read()
 
 if input == 1 then
-    if 
     io.write("Please write the username: ")
     local username = io.read()
     io.write("Please write the password: ")
