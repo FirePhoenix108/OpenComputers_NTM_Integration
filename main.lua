@@ -24,6 +24,10 @@ local choice = tonumber(input)
 
 io.write("\n\n")
 
+if choice == 1 then
+
+end
+
 if choice == 6 then
     os.execute("member_grade.lua")
 end
