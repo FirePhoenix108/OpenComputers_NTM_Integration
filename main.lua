@@ -7,7 +7,7 @@ local fs = require("filesystem")
 
 local menu = [[
 ----MENU'----
-1. RBMK Console (Emergency use only!).
+1. RBMK Console.
 2. Network seeker.
 3. Broadcaster.
 4. Messanger.
@@ -19,15 +19,21 @@ local menu = [[
 
 io.write(menu)
 
-local input = io.read()
-local choice = tonumber(input)
+local choice = io.read() 
 
 io.write("\n\n")
 
-if choice == 1 then
-
+if choice == "1" then
+    sehll.execute("rbmk_console.lua")
+else
+    io.write("Error: Please enter a valid option.")
+    sehll.execute("main.lua")
 end
 
-if choice == 6 then
-    os.execute("member_grade.lua")
+if choice == "6" then
+    sehll.execute("member_grade.lua")
+end
+
+if choice == "debug" then
+    os.exit()
 end
