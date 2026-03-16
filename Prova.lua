@@ -1,1 +1,0 @@
-local component = require("component")
